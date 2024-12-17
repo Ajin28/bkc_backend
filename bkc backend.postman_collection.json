@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "3757a088-600a-4881-8ada-6e2211505ee4",
+		"name": "bkc backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14845451"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"email\": \"test6@gmail.com\",\n    \"password\": \"password\",\n    \"role\": \"admin\",\n    \"first_name\": \"test\",\n    \"last_name\": \"test\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/register/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"register",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n    \"email\": \"test6@gmail.com\",\n    \"password\": \"password\",\n    \"role\": \"admin\",\n    \"first_name\": \"test\",\n    \"last_name\": \"test\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/register/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 16 Dec 2024 13:38:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "575"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNDQ0MjY4MiwiaWF0IjoxNzM0MzU2MjgyLCJqdGkiOiI3ZTFjYmE3NzQzNjE0MDIzODc1NjJiNGZiYjVkYWEyMiIsInVzZXJfaWQiOjI1fQ.D6jxn9CN5rSYryJPUXR15fJbOUtgUuzjR6qxZs-4vyk\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MzU2NTgyLCJpYXQiOjE3MzQzNTYyODIsImp0aSI6ImJiYmNhYTU5N2NlYTRmNTI5N2YwMTU1YmVhZjAxZDdlIiwidXNlcl9pZCI6MjV9.D3rwQ-0A2LdgxIztLj6hB0kXGHTviWgzFsvdDbf-F2E\",\n    \"user\": {\n        \"first_name\": \"test\",\n        \"last_name\": \"test\",\n        \"role\": \"admin\",\n        \"email\": \"test6@gmail.com\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test4@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"pencil stand\", \n    \"category\": \"Organizers\",\n    \"cost_price\": 35.75,\n    \"selling_price\": 71.50,\n    \"description\":\"a good pencil case\",\n    \"stock\": 5,\n    \"units_sold\": 8,\n    \"rating\":1,\n    \"demand_forecast\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/create/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\n//     \"id\": \"9\",\n//     \"name\": \" stand\",\n//     \"category\": \"Organizers\",\n//     \"cost_price\": 35.75,\n//     \"selling_price\": 71.50,\n//     \"description\": \"a good pencil case\",\n//     \"stock\": 5,\n//     \"units_sold\": 8,\n//     \"rating\": 1\n// }\n\n{\n    \"id\": 2,\n    \"selling_price\": 35.99,\n    \"units_sold\": 550\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/update/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"update",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/delete/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/detail/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"detail",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get forecast",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/forecast/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"forecast",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{AUTH_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page_size\": 5,\n    \"page\": 1,\n    \"name\": \"eco\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"",
+					"var email = pm.environment.get(\"email\")",
+					"var password = pm.environment.get(\"password\")",
+					"// var username = pm.environment.get(\"username\")",
+					"var base_url = pm.environment.get(\"base_url\")",
+					"",
+					"pm.sendRequest({",
+					"",
+					"    url: base_url + \"/user/login/\",",
+					"    method: 'POST',",
+					"    header: {",
+					"        'Content-Type': \"application/json\",",
+					"    },",
+					"    body: {",
+					"        mode: 'raw',",
+					"        raw: JSON.stringify({",
+					"            \"email\": email,",
+					"            \"password\": password",
+					"",
+					"        })",
+					"    }",
+					"}, function (err, response) {",
+					"    console.log(response)",
+					"    body = response.json()",
+					"    console.log('AUTH_TOKEN', body[\"access\"])",
+					"    console.log(err)",
+					"    pm.environment.set('AUTH_TOKEN', \"Bearer \" + body[\"access\"])",
+					"});",
+					"var today = new Date();",
+					"today.setHours(today.getHours() + 5);",
+					"today.setMinutes(today.getMinutes() + 30);",
+					"pm.environment.set('time', today.toISOString())",
+					"console.log(today.toISOString())"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
