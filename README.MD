@@ -27,7 +27,7 @@ To get started with the project, follow these steps:
 3. Navigate to the project directory:
 
    ```bash
-   cd bkc
+   cd bkc_backend
 
    ```
 
