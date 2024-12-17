@@ -11,7 +11,7 @@ To get started with the project, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Ajin28/bkc_backend.git
+   git clone https://github.com/Ajin28/bcg_backend.git
    ```
 
 2. (Optional) Create a virtual environment:
@@ -27,7 +27,7 @@ To get started with the project, follow these steps:
 3. Navigate to the project directory:
 
    ```bash
-   cd bkc_backend
+   cd bcg_backend
 
    ```
 
